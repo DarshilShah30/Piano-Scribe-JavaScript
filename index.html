@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Piano Scribe</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.2"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+          <div id="modelLoading">
+            <span>Loading model...</span>
+          </div>
+          
+          <div id="modelReady" hidden>
+            <div id="header_div">
+              <h2>AUDIO TO MIDI CONVERTER</h2>
+            </div>
+            <div id="buttons" onclick="transcribeText()">
+              <label class="button" onclick="removetext()" id="btnUpload" disabled>
+                <span class="text">Upload file <input type="file" id="fileInput"></span></span>
+                <span class="loading">Transcribing the file...</span>
+              </label>
+            </div>
+            <div id="footer">
+              Please upload a .wav file
+            </div>
+        </div>   
+            
+        <div id="done" hidden>
+            <h2>Done Transcribing!</h2>
+        </div>
+
+        <div id="transcribingMessage" hidden>
+            Longer audio takes a fair bit to transcribe, and will make your browser sluggish. Please hold while 
+            your robots are hard at work...
+          
+          <div class="container" id="container" hidden>
+            <canvas id="canvas"></canvas>
+          </div>
+        
+        </div>
+
+          <button class="button save" onclick="saveMidi(event)" id="saveBtn" hidden>Save MIDI</button>
+         
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" defer></script>
+
+</body>
+</html>
