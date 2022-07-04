@@ -5,4 +5,5 @@
 <li>All of the processing happens locally in the browser using Magenta.js and TensorFlow.js. </li>
 </ul>
 
-Check it out here: https://team18-mac.netlify.app/
+<b> Check it out here: https://team18-mac.netlify.app/ </b>
+
